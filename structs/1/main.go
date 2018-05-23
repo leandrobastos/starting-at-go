@@ -8,6 +8,11 @@ type Car struct {
 	Color string
 }
 
+type SuperCar struct {
+	Car
+	CanFly bool
+}
+
 func (c Car) info() string {
 	return fmt.Sprintf("Car: %s\n Year: %d\n Color: %s", c.Name, c.Year, c.Color)
 }
@@ -19,4 +24,15 @@ func main() {
 	fmt.Println(car1.Name)
 	fmt.Println(car2.Name)
 	fmt.Println(car1.info())
+
+	sCar := SuperCar{
+		Car: Car{
+			"Fusca",
+			2030,
+			"Blue",
+		},
+		CanFly: true,
+	}
+
+	fmt.Println(sCar.info())
 }
